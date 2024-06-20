@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-image 0.5s ease-in-out;
+}
+
+body.morning {
+    background-image: url('../img/manhã.png');
+}
+
+body.afternoon {
+    background-image: url('../img/tarde.png'); 
+}
+
+body.night {
+    background-image: url('../img/noite.jpg');
+}
+
+.relogio {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 200px;
+    width: 550px;
+    border-radius: 15px;
+    transition: background 0.5s ease-in-out;
+}
+
+.relogio div {
+    height: 170px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffffe4;
+    border-radius: 15px;
+    letter-spacing: 3px;
+}
+
+/* manhã */
+body.morning .relogio {
+    background: linear-gradient(360deg, rgba(255, 255, 255, 0.37), #ffffff00);
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.226);
+}
+
+body.morning .relogio div {
+    background: linear-gradient(360deg, rgba(255, 255, 255, 0.37), #ffffff00);
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.226);
+}
+
+/* tarde */
+body.afternoon .relogio {
+    background: linear-gradient(360deg, rgba(255, 255, 255, 0.089), #ffffff00);
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.226);
+}
+
+body.afternoon .relogio div {
+    background: linear-gradient(360deg, rgba(255, 255, 255, 0.089), #ffffff00);
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.226);
+}
+
+/* noite */
+body.night .relogio {
+    background: linear-gradient(360deg, rgba(255, 255, 255, 0.089), #ffffff00);
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.226);                                          
+}
+
+body.night .relogio div {
+    background: linear-gradient(360deg, rgba(255, 255, 255, 0.089), #ffffff00);
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.226);
+}
+
+
+.relogio span {
+    font-weight: bolder;
+    font-size: 60px;
+}
+
+.relogio span.tempo {
+    font-size: 10px;
+}
