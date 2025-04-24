@@ -6,37 +6,31 @@ const form = document.querySelector('.form');
 const input = document.querySelector('.input_search');
 const buttonPrev = document.querySelector('.btn-prev');
 const buttonNext = document.querySelector('.btn-next');
-const toggleShinyBtn = document.getElementById('toggleShiny'); // ⬅️ NOVO
+const buttonShiny = document.querySelector('.btn-shiny');
 
 let searchPokemon = 1;
-let isShiny = false; // ⬅️ NOVO
+let isShiny = false;
 
 const fetchPokemon = async (pokemon) => {
     const APIResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-    
-    if(APIResponse.status == 200) {
-        const data = await APIResponse.json();
-        return data;
+    if (APIResponse.status === 200) {
+        return await APIResponse.json();
     }
 }
 
 const renderPokemon = async (pokemon) => {
-
     pokemonName.innerHTML = 'Loading...';
     pokemonNumber.innerHTML = '';
 
     const data = await fetchPokemon(pokemon);
 
-    if(data) {
+    if (data) {
         pokemonImage.style.display = 'block';
         pokemonName.innerHTML = data.name;
         pokemonNumber.innerHTML = data.id;
-
-        const sprite = isShiny 
+        pokemonImage.src = isShiny
             ? data['sprites']['versions']['generation-v']['black-white']['animated']['front_shiny']
             : data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
-
-        pokemonImage.src = sprite;
         input.value = '';
         searchPokemon = data.id;
     } else {
@@ -46,24 +40,24 @@ const renderPokemon = async (pokemon) => {
     }
 }
 
-form.addEventListener('submit',(event) => {
+form.addEventListener('submit', (event) => {
     event.preventDefault();
     renderPokemon(input.value.toLowerCase());
 });
 
-buttonPrev.addEventListener('click',() => {
-    if(searchPokemon > 1) {
+buttonPrev.addEventListener('click', () => {
+    if (searchPokemon > 1) {
         searchPokemon -= 1;
         renderPokemon(searchPokemon);
     }
 });
 
-buttonNext.addEventListener('click',() => {
+buttonNext.addEventListener('click', () => {
     searchPokemon += 1;
     renderPokemon(searchPokemon);
 });
 
-toggleShinyBtn.addEventListener('click', () => { // ⬅️ NOVO
+buttonShiny.addEventListener('click', () => {
     isShiny = !isShiny;
     renderPokemon(searchPokemon);
 });
