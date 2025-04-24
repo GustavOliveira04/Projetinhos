@@ -14,7 +14,6 @@ body {
     min-height: 100vh;
 }
 
-
 main {
     display: inline-block;
     margin-top: 2%;
@@ -27,27 +26,33 @@ main {
     max-width: 425px;
 }
 
+/* 🔧 Posicionamento central do Pokémon na tela da pokédex */
 .pokemon_image {
     position: absolute;
-    bottom: 55%;
-    left: 50%;
-    transform: translate(-63%, 20%);
-    height: 20%;
+    top: 40%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    z-index: 1;
 }
 
+/* 🔧 Nome do Pokémon abaixo da imagem, ainda na tela */
 .pokemon_data {
     position: absolute;
+    top: 57%;
+    left: 60%;
+    transform: translate(-50%, -50%);
     font-weight: 600;
-    color: #aaa;
-    top: 54.5%;
-    right: 27%;
-    font-size: clamp(8px, 5vw, 25px);
+    color: #3a444d;
+    font-size: clamp(12px, 5vw, 20px);
+    text-align: center;
+    z-index: 2;
 }
 
 .pokemon_name {
     color: #3a444d;
     text-transform: capitalize;
-
 }
 
 .form {
@@ -76,15 +81,24 @@ main {
     width: 65%;
     transform: translate(-57%, 0);
     display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.nav-buttons {
+    display: flex;
     gap: 20px;
+    width: 100%;
+    justify-content: center;
 }
 
 .button {
-    width: 50%;
+    width: 100%;
     padding: 4%;
     border: 2px solid #000;
     border-radius: 5px;
-    font: clamp(opx, 5vw, 1rem);
+    font: clamp(0px, 5vw, 1rem);
     font-weight: 600;
     color: #fff;
     background-color: #444;
