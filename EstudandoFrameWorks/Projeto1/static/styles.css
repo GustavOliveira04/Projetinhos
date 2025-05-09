@@ -1,0 +1,112 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fundo escuro */
+body {
+    background: url("../static/img/backgroundImage.jpg");
+    /* background-color: #121212e6; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Caixa principal */
+.container {
+    background-color: #ffffffa5;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    width: 400px;
+    text-align: center;
+}
+
+/* Títulos */
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Formulário de criar tarefa */
+.form-create {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+/* Campo de texto */
+input[type="text"] {
+    background-color: #ffffffa5;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+}
+
+/* Lista de tarefas */
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Cada tarefa */
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+/* Formulário em linha */
+.form-inline {
+    display: flex;
+    gap: 8px;
+}
+
+/* Estilos dos botões */
+.btn {
+    border: none;
+    padding: 6px 12px; /* padding menor também */
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: white;
+    min-width: 60px; /* diminuído */
+    text-align: center;
+    flex-shrink: 0;
+    font-size: 14px; /* reduzido para combinar com o tamanho menor */
+}
+
+/* Botão Criar */
+.btn-criar {
+    background-color: #3498db;
+}
+
+.btn-criar:hover {
+    background-color: #2980b9;
+}
+
+/* Botão Atualizar */
+.btn-atualizar {
+    background-color: #e7d913;
+}
+
+.btn-atualizar:hover {
+    background-color: #dbb90e;
+}
+
+/* Botão Excluir */
+.btn-excluir {
+    background-color: #FF1E1E;
+}
+
+.btn-excluir:hover {
+    background-color: #880f0f;
+}

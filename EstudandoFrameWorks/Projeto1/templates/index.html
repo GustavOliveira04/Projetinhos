@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo com Flask</title>
+
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Adicione uma tarefa!</h1>
+        <form action="/create" method="POST" class="form-create">
+            <input type="text" name="description" required placeholder="Adicione uma tarefa aqui!">
+            <button type="submit" class="btn btn-criar">Criar Tarefa</button>
+        </form>
+
+        <h1>-- Suas Tarefas --</h1>
+        <ul class="task-list">
+            {% for task in tasks %}
+                <li class="task-item">
+                    <form action="/update/{{ task.id }}" method="POST" class="form-inline">
+                        <input type="text" name="description" value="{{ task.description }}">
+                        <button type="submit" class="btn btn-atualizar">Editar</button>
+                    </form>
+
+                    <form action="/delete/{{ task.id }}" method="POST" class="form-inline">
+                        <button type="submit" class="btn btn-excluir">Excluir</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
